@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "back end do proshop",
   "main": "server.js",
+  "type": "module",
   "repository": "git@github.com:jeffersonbraster/proshop.git",
   "author": "Jefferson <jeffersonbraster@gmail.com>",
   "license": "MIT",
@@ -14,7 +15,8 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.10.8"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
