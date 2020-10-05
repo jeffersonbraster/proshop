@@ -1,0 +1,15 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "back end do proshop",
+  "main": "server.js",
+  "repository": "git@github.com:jeffersonbraster/proshop.git",
+  "author": "Jefferson <jeffersonbraster@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
