@@ -44,7 +44,7 @@ const RegisterScreen = ({location, history}) => {
       {message && <Message variant="danger">{message}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
-      <Form.Group controlId="name">
+        <Form.Group controlId="name">
           <Form.Label>Nome completo: </Form.Label>
           <Form.Control type="name" placeholder="Insira seu nome" value={name} onChange={e => setName(e.target.value)}>
           </Form.Control>
