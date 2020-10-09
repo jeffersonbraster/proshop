@@ -3,7 +3,7 @@ import {Form, Button, Row, Col} from 'react-bootstrap'
 import {useDispatch, useSelector} from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import {getUserDetails} from '../actions/userActions'
+import {getUserDetails, updateUserProfile} from '../actions/userActions'
 
 
 const ProfileScreen = ({location, history}) => {
@@ -20,6 +20,9 @@ const ProfileScreen = ({location, history}) => {
 
   const userLogin = useSelector(state => state.userLogin)
   const {userInfo} = userLogin
+
+  const userUpdateProfile = useSelector(state => state.userUpdateProfile)
+  const {success} = userUpdateProfile
 
   useEffect(() => {
     if(!userInfo) {
@@ -39,7 +42,7 @@ const ProfileScreen = ({location, history}) => {
     if(password !== confirmPassword) {
       setMessage('As senhas não conferem')
     } else {
-      //ee
+      dispatch(updateUserProfile({id: user._id, name, email, password}))
     }    
   }
 
@@ -47,6 +50,7 @@ const ProfileScreen = ({location, history}) => {
     <Col md={3}>
       <h2>Perfil</h2>
       {error && <Message variant="danger">{error}</Message>}
+      {success && <Message variant="success">Perfil atualizado com sucesso!</Message>}
       {message && <Message variant="danger">{message}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
