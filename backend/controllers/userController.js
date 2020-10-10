@@ -108,8 +108,15 @@ const registerUser = asyncHandler(async(req, res) => {
     res.status(400)
     throw new Error('Dados invalidos, verifique.')
   }
-
-
 })
 
-export {authUser, getUserProfile, registerUser, updateUserProfile}
+// @desc GET  all user
+// @route GET /api/users
+// @access Private/admin
+const getUsers = asyncHandler(async(req, res) => {    
+
+  const users = await User.find({})
+  res.json(users)
+})
+
+export {authUser, getUserProfile, registerUser, updateUserProfile, getUsers}
