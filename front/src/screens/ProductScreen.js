@@ -35,7 +35,7 @@ const ProductScreen = ({history, match}) => {
     }
 
     if(errorProductReview) {
-      alert('Ops, realizado um comentário neste produto.')
+      alert('Ops, já realizado um comentário neste produto.')
       setRating(0)
       setComment('')
       dispatch({type: PRODUCT_CREATE_REVIEW_RESET})
