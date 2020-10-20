@@ -4,7 +4,7 @@ import {Table, Button} from 'react-bootstrap'
 import {useDispatch, useSelector} from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import {listUsers, deleteUsers} from '../actions/userActions'
+import {listUsers, deleteUser} from '../actions/userActions'
 
 const UserListScreen = ({history}) => {
   const dispatch = useDispatch()
@@ -29,7 +29,7 @@ const UserListScreen = ({history}) => {
 
   const deleteHandler = (id) => {
     if(window.confirm('Confirma exclusão')) {
-      dispatch(deleteUsers(id))
+      dispatch(deleteUser(id))
     }    
   }
 
