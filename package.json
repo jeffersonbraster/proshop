@@ -8,12 +8,13 @@
   "author": "Jefferson <jeffersonbraster@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "node backend/server",
     "server": "nodemon backend/server",
     "client": "yarn start --prefix front",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d"
+    "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn add --prefix front && yarn run build --prefix front"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
